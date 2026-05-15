@@ -46,9 +46,19 @@ export default function HomePage() {
             <div className="text-[11px] uppercase tracking-[0.32em] text-fuchsia-200/82">skills.romobot.es</div>
             <h1 className="mt-2 text-[2rem] font-semibold tracking-tight text-white">Clippy</h1>
           </div>
-          <div className="flex items-center gap-2 rounded-2xl border border-white/10 bg-white/[0.06] px-3 py-2 text-sm text-zinc-100">
-            <UserRound className="h-4 w-4 text-fuchsia-200" />
-            romoagent-ops
+          <div className="flex items-center gap-2">
+            <div className="flex items-center gap-2 rounded-2xl border border-white/10 bg-white/[0.06] px-3 py-2 text-sm text-zinc-100">
+              <UserRound className="h-4 w-4 text-fuchsia-200" />
+              romoagent-ops
+            </div>
+            <form action="/api/auth/logout" method="post">
+              <button
+                type="submit"
+                className="rounded-2xl border border-white/10 bg-white/[0.05] px-3 py-2 text-sm text-zinc-200 transition hover:bg-white/[0.08]"
+              >
+                Salir
+              </button>
+            </form>
           </div>
         </div>
 
