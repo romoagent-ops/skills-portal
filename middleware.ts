@@ -1,6 +1,6 @@
 import type { NextRequest } from 'next/server';
 import { NextResponse } from 'next/server';
-import { SESSION_COOKIE } from '@/lib/auth';
+import { buildExternalUrl, SESSION_COOKIE } from '@/lib/auth';
 
 export function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
@@ -19,8 +19,7 @@ export function middleware(request: NextRequest) {
   const current = request.cookies.get(SESSION_COOKIE)?.value;
 
   if (!expected || current !== expected) {
-    const loginUrl = new URL('/login', request.url);
-    return NextResponse.redirect(loginUrl);
+    return NextResponse.redirect(buildExternalUrl(request, '/login'));
   }
 
   return NextResponse.next();

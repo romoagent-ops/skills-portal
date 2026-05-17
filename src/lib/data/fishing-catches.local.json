@@ -1,0 +1,14 @@
+[
+  {
+    "id": "catch-gs-demo-1",
+    "sessionId": "session-gs-demo",
+    "species": "black bass",
+    "weightKg": 1.82,
+    "lengthCm": 43,
+    "lure": "Fluke weightless",
+    "technique": "transición en punta",
+    "depthM": 3.2,
+    "notes": "Pez activo cerca de salida de recula.",
+    "createdAt": "2026-05-13T19:15:00.000Z"
+  }
+]

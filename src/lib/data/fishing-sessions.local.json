@@ -1,0 +1,14 @@
+[
+  {
+    "id": "session-gs-demo",
+    "ownerKey": "carlos",
+    "reservoirId": "garcia-sola",
+    "targetSpecies": "black bass",
+    "mode": "pato",
+    "usingSonar": true,
+    "sonarDevice": "Lowrance Eagle Eye",
+    "tripDate": "2026-05-14",
+    "notes": "Sesión demo inicial para probar el flujo local.",
+    "createdAt": "2026-05-13T19:00:00.000Z"
+  }
+]

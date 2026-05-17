@@ -8,6 +8,7 @@ import {
   FileText,
   Fish,
   Globe2,
+  Home,
   Image as ImageIcon,
   Languages,
   Mail,
@@ -28,6 +29,7 @@ export type SkillCard = {
   tone: SkillTone;
   icon: LucideIcon;
   metric?: string;
+  href?: string;
   section: 'core' | 'ops' | 'lab' | 'paused';
 };
 
@@ -68,12 +70,13 @@ export const skills: SkillCard[] = [
   {
     slug: 'images',
     title: 'Images',
-    subtitle: 'Análisis y generación',
-    description: 'Lectura visual, variaciones e imágenes listas para revisión.',
+    subtitle: 'Prompting + edición',
+    description: 'Afina el briefing, genera dentro del portal y reutiliza resultados para iterar o editar.',
     state: 'Lista',
     tone: 'amber',
     icon: ImageIcon,
     metric: 'IMG',
+    href: '/images',
     section: 'core',
   },
   {
@@ -168,12 +171,25 @@ export const skills: SkillCard[] = [
     slug: 'fishing-intel',
     title: 'Fishing Intel',
     subtitle: 'Briefings de pesca',
-    description: 'La idea queda guardada y aislada hasta rehacerla con repo propio.',
-    state: 'En pausa',
-    tone: 'slate',
+    description: 'Briefing táctico por embalse, fecha, especie, spot y lectura sonar, ya integrado en el portal.',
+    state: 'Lista',
+    tone: 'cyan',
     icon: Fish,
-    metric: 'PAUSA',
-    section: 'paused',
+    metric: 'LIVE',
+    href: '/fishing',
+    section: 'core',
+  },
+  {
+    slug: 'seguro-hogar',
+    title: 'Seguro Hogar',
+    subtitle: 'Póliza entendible',
+    description: 'Lectura interactiva de la póliza: coberturas, exclusiones y guía práctica para enfocar partes.',
+    state: 'Lista',
+    tone: 'emerald',
+    icon: Home,
+    metric: 'POL',
+    href: '/insurance/home',
+    section: 'ops',
   },
   {
     slug: 'capture-log',

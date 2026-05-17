@@ -37,6 +37,12 @@ const grouped = {
   paused: skills.filter((item) => item.section === 'paused'),
 };
 
+const stats = [
+  [String(skills.length), 'skills'],
+  [String(grouped.core.length + grouped.ops.length), 'listas'],
+  [String(grouped.paused.length), 'pausa'],
+] as const;
+
 export default function HomePage() {
   return (
     <main className="mx-auto min-h-screen w-full max-w-md px-4 pb-10 pt-4 sm:max-w-xl sm:px-5">
@@ -72,11 +78,7 @@ export default function HomePage() {
           </p>
 
           <div className="mt-4 grid grid-cols-3 gap-3">
-            {[
-              ['12', 'skills'],
-              ['4', 'listas'],
-              ['1', 'pausa'],
-            ].map(([value, label]) => (
+            {stats.map(([value, label]) => (
               <div key={label} className="rounded-[22px] border border-white/10 bg-black/20 px-3 py-3 text-center">
                 <div className="text-lg font-semibold text-white">{value}</div>
                 <div className="mt-1 text-[11px] uppercase tracking-[0.22em] text-zinc-300/72">{label}</div>
@@ -117,7 +119,7 @@ export default function HomePage() {
                   return (
                     <Link
                       key={skill.slug}
-                      href={`/#${skill.slug}`}
+                      href={skill.href ?? `/#${skill.slug}`}
                       className="relative block overflow-hidden rounded-[24px] border border-white/10 bg-[linear-gradient(180deg,rgba(14,16,27,0.96),rgba(10,12,20,0.92))] p-4 transition duration-150 hover:-translate-y-[1px] hover:border-white/16"
                     >
                       <div className={`absolute inset-x-0 top-0 h-16 bg-gradient-to-b ${tone.glow}`} />
